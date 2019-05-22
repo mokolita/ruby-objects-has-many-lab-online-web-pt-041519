@@ -29,7 +29,9 @@ class Artist
   end
   
   def self.song_count
-    @@all.count  
+    @@all.collect do |artist|
+      artist.songs 
+    end.flatten.length 
     #binding.pry
   end 
 end 
